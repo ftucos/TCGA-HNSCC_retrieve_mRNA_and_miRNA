@@ -104,4 +104,4 @@ miRNAseq_isoform[is.na(miRNAseq_isoform)] <- 0
 miRNAseq_isoform <- miRNAseq_isoform %>% select(MIMAT_ID, miRNA, everything())
 
 # export
-fwrite(as.data.frame(miRNAseq_isoform) %>% rownames_to_column("miRNA_isoform"), file = "result/TCGA-HNSC.miRNAseq_isoform.counts.tsv", quote = F, sep = "\t")
+fwrite(miRNAseq_isoform, file = "result/TCGA-HNSC.miRNAseq_isoform.counts.tsv", quote = F, sep = "\t")
